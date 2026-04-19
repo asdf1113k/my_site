@@ -15,9 +15,10 @@ const container = document.getElementById("servicesContainer");
 function createServiceCard(title_card_service, text_in_buttom, description_service) {
     const card_service = document.createElement("div");
     card_service.classList.add("card_with_the_service");
+    card_service.classList.add("block_text-shadow");
 
     const text_center = document.createElement('div');
-    text_center.classList.add('text_center_in_display-flex')
+    text_center.classList.add('text_center')
 
     const h2 = document.createElement("h2");
     h2.classList.add('title_service');
@@ -39,6 +40,10 @@ function createServiceCard(title_card_service, text_in_buttom, description_servi
 
 // Добавляем все блоки из массива   
 services_title.forEach(serviceTitle => {
-    const block = createServiceCard(serviceTitle, "о услге", 'обисание услуги');
+    const block = createServiceCard(
+        serviceTitle, 
+        "о услге",
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia a impedit. Facilis, officiis voluptatibus! Sequi quod cupiditate placeat alias enim nostrum, eum, odio soluta recusandae, asperiores beatae aperiam rem.'
+    );
     container.appendChild(block);
 });
