@@ -4,13 +4,23 @@ p {
 }
 
 .welcome_text {
-    font-size: 60px;
-    position: relative;
-    top: 25%;
+    font-size: 2vw;
+    color: rgb(19, 19, 19);
+}
+
+.text_nums_tel {
+    font-family: auto;
+    text-decoration-line: none;
+    font-size: 36px;
+    color: black;
+}
+
+
+.title_service {
+    /* color: white; */
 }
 
 .text_center {
-    display: block;
     /* background-color: aquamarine;  */
     /* цвет для отладки */
     text-align: center;
@@ -21,9 +31,10 @@ p {
 }
 
 .block_text-shadow {
-    text-shadow: 0px 1px 10px;
+    text-shadow: 0px 0px 0px;
+    
     transition: text-shadow 1s;
 }
     .block_text-shadow:hover {
-        text-shadow: 0px 10px 10px ;
+        text-shadow: 0px 1px 10px;
     }
