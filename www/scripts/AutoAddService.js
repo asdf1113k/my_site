@@ -1,21 +1,23 @@
 // сделать скрипт который сам добавит три блока с услугами а не это мозго ёбство с html
 console.log('script work');
 
+document.addEventListener('keyup',function(e) { console.log(e.key) })
+
 // Массив услуг (можно дополнять/править)
 const services_title = [
-    "блок с услугой 1",
-    "блок с услугой 2",
-    "блок с услугой 3"
+    "установка",
+    "заправка фрионом",
+    "ремонт"
 ];
 
 // Находим контейнер, куда будем вставлять блоки
-const container = document.getElementById("servicesContainer");
+const container = document.getElementById("services_container");
 
 // Функция создаёт один блок
 function createServiceCard(title_card_service, text_in_buttom, description_service) {
     const card_service = document.createElement("div");
     card_service.classList.add("card_with_the_service");
-    card_service.classList.add("block_text-shadow");
+    // card_service.classList.add("block_text-shadow");
 
     const text_center = document.createElement('div');
     text_center.classList.add('text_center')
