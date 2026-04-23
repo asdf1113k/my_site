@@ -6,7 +6,13 @@
 Давай кнопку заказать посередине, над ней текст, под ней номер телефона
 
 # notes
-javascript код генератор дивов
+
+
+
+
+
+---
+## javascript код генератор дивов
 ```html
 <div id="servicesContainer"></div>
 
@@ -14,8 +20,11 @@ javascript код генератор дивов
 ```
 
 ```js
+// сделать скрипт который сам добавит три блока с услугами а не это мозго ёбство с html
+console.log('script work');
+
 // Массив услуг (можно дополнять/править)
-const services = [
+const services_title = [
     "блок с услугой 1",
     "блок с услугой 2",
     "блок с услугой 3"
@@ -25,38 +34,42 @@ const services = [
 const container = document.getElementById("servicesContainer");
 
 // Функция создаёт один блок
-function createServiceBlock(title) {
-    const outer = document.createElement("div");
-    outer.classList.add("block_with_service");
+function createServiceCard(title_card_service, text_in_buttom, description_service) {
+    const card_service = document.createElement("div");
+    card_service.classList.add("card_with_the_service");
+    // card_service.classList.add("block_text-shadow");
 
-    const inner = document.createElement("div");
-    inner.classList.add("BlockWithTheService");
+    const text_center = document.createElement('div');
+    text_center.classList.add('text_center')
 
-    const p = document.createElement("p");
-    p.textContent = title;
+    const h2 = document.createElement("h2");
+    h2.classList.add('title_service');
+    h2.textContent = title_card_service;
 
     const button = document.createElement("button");
     button.classList.add("button_about_service");
-    button.textContent = "о услуге";
+    button.textContent = text_in_buttom;
 
-    inner.appendChild(p);
-    inner.appendChild(button);
-    outer.appendChild(inner);
+    const description_service_p = document.createElement('p');
+    description_service_p.textContent = description_service;
 
-    return outer;
+    text_center.appendChild(h2)
+    card_service.appendChild(text_center);
+    card_service.appendChild(button);
+    card_service.appendChild(description_service_p);
+    return card_service;
 }
 
-// Добавляем все блоки из массива
-services.forEach(serviceTitle => {
-    const block = createServiceBlock(serviceTitle);
+// Добавляем все блоки из массива   
+services_title.forEach(serviceTitle => {
+    const block = createServiceCard(
+        serviceTitle, 
+        "о услге",
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione mollitia a impedit. Facilis, officiis voluptatibus! Sequi quod cupiditate placeat alias enim nostrum, eum, odio soluta recusandae, asperiores beatae aperiam rem.'
+    );
     container.appendChild(block);
 });
 ```
-
-
-
-
-JavaScript всё равно не «рисует» что‑то отдельно от HTML: он просто меняет DOM‑дерево, а браузер этот DOM автоматически превращает в видимую страницу.
 
 Как элементы попадают на HTML‑страницу
 Создание HTML‑элемента в JavaScript
